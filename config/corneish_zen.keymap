@@ -18,6 +18,14 @@
       bindings = <&kp RA(BSPC)>, <&kp LG(BSPC)>;
       mods = <(MOD_LGUI)>;
     };
+    ht_btclear: hold_tap_bt_clear {
+        compatible = "zmk,behavior-hold-tap";
+        label = "ht_btclear";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&btchold>, <&none>;
+    };
   };
 };
 
@@ -34,7 +42,7 @@
 / {
     macros {
         btchold: bt_clear_hold {
-            label = "Clear BT connection with hold-tap";
+            label = "Clear_BT_connection_with_hold_tap";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_CLR>;
@@ -93,24 +101,24 @@
      &kp TILDE   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR &kp RPAR &kp BSPC
      &trans   &trans   &trans &trans   &trans   &trans          &kp MINUS  &kp EQUAL &kp LBKT         &kp RBKT &kp BSLH &kp DQT
      &trans   &trans   &trans &trans   &trans   &trans          &kp UNDER  &kp PLUS  &kp LBRC         &kp RBRC &kp PIPE &trans
-                    	        &trans   &trans   &trans          &trans     &trans    &trans
+                                    &trans   &trans   &trans          &trans     &trans    &trans
                         >;
                 };
 
                 config_layer {
                         label = "MEDIA";
-//                                                ----------------------------------------          -----------------------
-//                                                |  BTCLR  | BT1 | BT2 | BT3 | BT4 | BT5 |        |    |   |    |   |   |   |
-//                                                |  CTRL   |     |     |     |     |     |        | 🔕 | 🔉 | 🔊 | ⏯ |  |   |
-//                                                |  SHFT   |     |     |     |     |     |        | ⏮ | ⏭ |    |   |   |   |
-//                                                ----------------------------------------          -----------------------
-//                                                                      |GUI  |     | SPC |        |   |   |   |
-//                                                                       -----------------          -----------
+//                              ----------------------------------------          -----------------------
+//                              |  BTCLR  | BT1 | BT2 | BT3 | BT4 | BT5 |        |    |   |    |   |   |   |
+//                              |  CTRL   |     |     |     |     |     |        | 🔕 | 🔉 | 🔊 | ⏯ |  |   |
+//                              |  SHFT   |     |     |     |     |     |        | ⏮ | ⏭ |    |   |   |   |
+//                              ----------------------------------------          -----------------------
+//                                                    |GUI  |     | SPC |        |   |   |   |
+//                                                     -----------------          -----------
                         bindings = <
-   &mt btchold &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &trans          &trans          &trans          &trans       &trans     &trans
-   &trans              &trans        &trans        &trans        &trans        &trans            &kp C_VOL_DN    &kp C_VOL_UP    &kp C_MUTE      &kp C_PP     &trans     &trans
-   &trans              &trans        &trans        &trans        &trans        &trans            &kp C_NEXT      &kp C_PREV      &trans          &trans       &trans     &trans
-                     	                           &trans        &trans        &trans            &trans            &trans          &trans
+   &ht_btclear   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &trans          &trans          &trans          &trans       &trans     &trans
+   &trans        &trans        &trans        &trans        &trans        &trans            &kp C_VOL_DN    &kp C_VOL_UP    &kp C_MUTE      &kp C_PP     &trans     &trans
+   &trans        &trans        &trans        &trans        &trans        &trans            &kp C_NEXT      &kp C_PREV      &trans          &trans       &trans     &trans
+                                             &trans        &trans        &trans            &trans            &trans          &trans
                         >; 
                 };
         };
