@@ -107,18 +107,18 @@
 
                 config_layer {
                         label = "MEDIA";
-//                              ----------------------------------------          -----------------------
-//                              |  BTCLR  | BT1 | BT2 | BT3 | BT4 | BT5 |        |    |   |    |   |   |   |
+//                              ----------------------------------------          ----------------------------------------------
+//                              |  BTCLR  | BT1 | BT2 | BT3 | BT4 | BT5 |        |    |   |    |   | BT/USB toggle | BT_CLEAR |
 //                              |  CTRL   |     |     |     |     |     |        | 🔕 | 🔉 | 🔊 | ⏯ |  |   |
-//                              |  SHFT   |     |     |     |     |     |        | ⏮ | ⏭ |    |   |   |   |
+//                              |  SHFT   |     |     |     |     |     |        | ⏮ | ⏭ |    |   |  |   |
 //                              ----------------------------------------          -----------------------
 //                                                    |GUI  |     | SPC |        |   |   |   |
 //                                                     -----------------          -----------
                         bindings = <
-   &trans   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &trans          &trans          &trans          &trans       &trans     &bt BT_CLR
-   &trans        &trans        &trans        &trans        &trans        &trans            &kp C_VOL_DN    &kp C_VOL_UP    &kp C_MUTE      &kp C_PP     &trans     &trans
-   &trans        &trans        &trans        &trans        &trans        &trans            &kp C_NEXT      &kp C_PREV      &trans          &trans       &trans     &trans
-                                             &trans        &trans        &trans            &trans            &trans          &trans
+   &trans   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &trans          &trans          &trans          &trans       &out OUT_TOG     &bt BT_CLR
+   &trans        &trans        &trans        &trans        &trans        &trans           &kp C_VOL_DN    &kp C_VOL_UP    &kp C_MUTE      &kp C_PP     &trans           &trans
+   &trans        &trans        &trans        &trans        &trans        &trans           &kp C_NEXT      &kp C_PREV      &trans          &trans       &trans           &trans
+                                             &trans        &trans        &trans           &trans          &trans          &trans
                         >; 
                 };
         };
