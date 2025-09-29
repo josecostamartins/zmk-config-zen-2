@@ -30,15 +30,6 @@
       bindings = <&kp RA(BSPC)>, <&kp LG(BSPC)>;
       mods = <(MOD_LGUI)>;
     };
-
-//     ht_btclear: hold_tap_bt_clear {
-//         compatible = "zmk,behavior-hold-tap";
-//         label = "ht_btclear";
-//         #binding-cells = <2>;
-//         flavor = "hold-preferred";
-//         tapping-term-ms = <200>;
-//         bindings = <&btchold>, <&none>;
-//     };
   };
 };
 
@@ -119,7 +110,7 @@
             bindings = <
    &trans   &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans          &trans          &trans          &trans       &out OUT_TOG     &bt BT_CLR
    &trans   &trans        &studio_unlock  &trans        &trans        &trans           &kp C_VOL_DN    &kp C_VOL_UP    &kp C_MUTE      &kp C_PP     &trans           &trans
-   &trans   &trans        &trans          &trans        &trans        &trans           &kp C_NEXT      &kp C_PREV      &trans          &trans       &trans           &trans
+   &trans   &trans        &trans          &trans        &trans        &trans           &kp C_PREV      &kp C_NEXT      &trans          &trans       &trans           &trans
                                           &trans        &trans        &trans           &trans          &trans          &trans
             >; 
         };
